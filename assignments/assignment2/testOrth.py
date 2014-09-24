@@ -120,7 +120,7 @@ if True:
     print np.round(R, decimals = 3), "\n\n", np.round(np.dot(Q.T,Q), decimals = 5), "\n\n", np.round(o.A.T - np.dot(Q, R), decimals = 8)     
 
 if True:
-    n = 750
+    n = 1000
     A = np.random.rand(n, n)
     o = Orthogonalization(A.T)
     t0 = time.time()

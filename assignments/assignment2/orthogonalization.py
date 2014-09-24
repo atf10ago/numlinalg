@@ -102,14 +102,14 @@ class Orthogonalization:
             if i == self.m-1:
                 break
 
-            G = eye(self.m)
+            #G = eye(self.m)
             x1 = R[i, -2]
             x2 = R[i, -1]
             r = np.sqrt(x1**2+x2**2)
             c = x1/r
             s = x2/r
             J = np.array([[c, s], [s, -c]])
-            G[-2:,-2:] = J
+            #G[-2:,-2:] = J
             R[:,-2:] = np.dot(R[:,-2:], J.T)
             if both:
                 Q[-2:,:] = np.dot(J, Q[-2:,:])
@@ -123,13 +123,13 @@ class Orthogonalization:
                 J = np.array([[c, s], [s, -c]])
                 R[i:,-j:-j+2] = np.dot(R[i:,-j:-j+2], J.T)
                 if both:
-                    G[-j:-j+2,-j:] = np.dot(J,G[-j:-j+2,-j:])
+             #       G[-j:-j+2,-j:] = np.dot(J,G[-j:-j+2,-j:])
                     Q[-j:-j+2,:] = np.dot(J,Q[-j:-j+2,:])
 
             #if both:
              #   Q = np.dot(G, Q)
 
-            g_list.append(G)
+            #g_list.append(G)
             #R = np.dot(R, G.T)
 
         if not both:
